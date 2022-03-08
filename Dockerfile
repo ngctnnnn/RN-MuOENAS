@@ -57,3 +57,5 @@ RUN sdkmanager "system-images;android-19;google_apis;armeabi-v7a" \
 
 # clean up unnecessary directories
 RUN rm -rf /opt/android/.android
+
+CMD ["yarn install && yarn run android"]
