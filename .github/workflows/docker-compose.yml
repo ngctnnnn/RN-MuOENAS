@@ -13,11 +13,16 @@ jobs:
         run: |
           curl https://download.docker.com/linux/static/stable/x86_64/docker-20.10.3.tgz | tar xz
           sudo cp ./docker/docker /usr/bin/ && rm -rf docker && docker version
-      - name: Test docker environment 
+      - name: Get docker image
         run: |
-          docker build docker/Dockerfile -t cs532-docker-image
-          docker run -it --rm --name cs532-docker-container cs532-docker-image
-      - name: Run environment
+          docker pull reactnativecommunity/react-native-android
+          docker run reactnativecommunity/react-native-android
+      - name: Install yarn 
         run: |
-          yarn install
-          yarn run android 
+          apt-get install nodejs
+          apt-get install npm
+          npm install -g yarn
+      - name: Testing primary environment
+        run: |
+          yarn
+          yarn run android
