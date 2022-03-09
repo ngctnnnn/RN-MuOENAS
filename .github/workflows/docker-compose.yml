@@ -15,7 +15,7 @@ jobs:
           sudo cp ./docker/docker /usr/bin/ && rm -rf docker && docker version
       - name: Test docker environment 
         run: |
-          docker build CS532/Docker/Dockerfile -t cs532-docker-image
+          docker build CS532/docker/Dockerfile -t cs532-docker-image
           docker run -it --rm --name cs532-docker-container cs532-docker-image
       - name: Run environment
         run: |
