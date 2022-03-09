@@ -19,8 +19,8 @@ jobs:
           docker run reactnativecommunity/react-native-android
       - name: Install yarn 
         run: |
-          apt-get install nodejs
-          apt-get install npm
+          apt install nodejs
+          apt install npm
           npm install -g yarn
       - name: Testing primary environment
         run: |
