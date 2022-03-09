@@ -1,0 +1,23 @@
+name: Docker compose testing
+
+on: [push]
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 5
+
+    steps:
+      - name: Setup docker CLI
+        run: |
+          curl https://download.docker.com/linux/static/stable/x86_64/docker-20.10.3.tgz | tar xz
+          sudo cp ./docker/docker /usr/bin/ && rm -rf docker && docker version
+      - name: Test docker environment 
+        run: |
+          docker build CS532/Docker/Dockerfile -t cs532-docker-image
+          docker run -it --rm --name cs532-docker-container cs532-docker-image
+      - name: Run environment
+        run: |
+          yarn install
+          yarn run android 
