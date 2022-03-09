@@ -21,6 +21,3 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '15'
-      - name: Testing primary environment
-        run: |
-          npm install
