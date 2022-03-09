@@ -3,7 +3,7 @@ name: Docker compose testing
 on: [push]
 
 jobs:
-  build-linux:
+  test-ubuntu-environment:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 5
@@ -17,12 +17,11 @@ jobs:
         run: |
           docker pull reactnativecommunity/react-native-android
           docker run reactnativecommunity/react-native-android
-      - name: Install yarn 
-        run: |
-          apt install nodejs
-          apt install npm
-          npm install -g yarn
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
       - name: Testing primary environment
         run: |
-          yarn
-          yarn run android
+          npm install
+          npm run android
