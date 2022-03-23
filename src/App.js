@@ -1,42 +1,52 @@
 import React, {Component} from 'react';
 import {Alert, AppRegistry, StyleSheet, Text, View} from 'react-native';
-import Button from 'react-native-button';
+import Button from './assets/button';
 
 var styles = StyleSheet.create({
     hello: {
         fontSize: 20,
         textAlign: 'center',
-        margin: 10
+        margin: 10,
     },
     button: {
         fontSize: 20,
         padding: 10,
-        color: 'white',
-        backgroundColor: 'green',
-        borderRadius: 10
-    }
-  });
+        color: 'black',
+        backgroundColor: 'grey',
+        borderRadius: 10,
+        borderStyle: 'solid',
+        borderColor: 'black',
+        marginRight:40,
+        marginLeft:40,
+        marginTop:10,
+    },
+});
 
 export default class App extends Component {
-    _onPressButton = () => (
-        Alert.alert("U pressed the button !")
-    )
+    // _onPressButton = () => Alert.alert('You pressed the button !');
     render() {
-        return(<View style={{
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center'
-        }}>
+        return (
+            <View
+                style={{
+                    flex: 1,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
+            >
+                <Text style={styles.hello}>Code base for CS523 project</Text>
 
-        <Text style={styles.hello}>Code base for CS523 project</Text>
-
-        <Button style={styles.button}
-        onPress={() => { navi}}
-        >This is a button</Button>
-
-        </View>);
+                {/* <Button name="camera"
+                    style={styles.button}
+                    onPress={() => {
+                        alert('You tapped the button!');
+                    }}
+                >
+                    This is a button
+                </Button> */}
+                <Button name="camera"/>
+            </View>
+        );
     }
 }
 
-
-AppRegistry.registerComponent('Test', () => App)
+AppRegistry.registerComponent('Test', () => App);

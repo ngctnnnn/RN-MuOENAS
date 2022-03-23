@@ -3,21 +3,21 @@ name: Docker compose testing
 on: [push]
 
 jobs:
-  test-ubuntu-environment:
-    runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 5
+    test-ubuntu-environment:
+        runs-on: ubuntu-latest
+        strategy:
+            max-parallel: 5
 
-    steps:
-      - name: Setup docker CLI
-        run: |
-          curl https://download.docker.com/linux/static/stable/x86_64/docker-20.10.3.tgz | tar xz
-          sudo cp ./docker/docker /usr/bin/ && rm -rf docker && docker version
-      - name: Get docker image
-        run: |
-          docker pull reactnativecommunity/react-native-android
-          docker run reactnativecommunity/react-native-android
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '15'
+        steps:
+            - name: Setup docker CLI
+              run: |
+                  curl https://download.docker.com/linux/static/stable/x86_64/docker-20.10.3.tgz | tar xz
+                  sudo cp ./docker/docker /usr/bin/ && rm -rf docker && docker version
+            - name: Get docker image
+              run: |
+                  docker pull reactnativecommunity/react-native-android
+                  docker run reactnativecommunity/react-native-android
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v2
+              with:
+                  node-version: '15'
