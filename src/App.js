@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image, Button } from 'react-native';
-import { launchImageLibrary } from 'react-native-image-picker';
+import { launchImageLibrary, launchCamera } from 'react-native-image-picker';
 
 export default class App extends React.Component {
     state = {
@@ -8,11 +8,22 @@ export default class App extends React.Component {
     }
 
     handleChoosePhoto = () => {
-        const options = {
+        const LibraryOptions = {
             noData: true,
             includeBase64: false
         };
-        launchImageLibrary(options, response => {
+        launchImageLibrary(LibraryOptions, response => {
+            console.log("response", response.assets[0].uri);
+            this.setState({ PHOTO: response });
+        });
+    };
+
+    handleTakePhoto = () => {
+        const CameraOptions = {
+            cameraType: 'back',
+            includeBase64: false
+        };
+        launchCamera(CameraOptions, response => {
             console.log("response", response.assets[0].uri);
             this.setState({ PHOTO: response });
         });
@@ -36,7 +47,7 @@ export default class App extends React.Component {
                 </View> 
 
                 <View style={styles.ButtonContent}>
-                    <Button title="Take a photo" onPress={this.handleChoosePhoto}/>
+                    <Button title="Take a photo" onPress={this.handleTakePhoto}/>
                     <Button title="Upload a photo" style={{ marginTop: 100 }} onPress={this.handleChoosePhoto}/>
                 </View>
             </View>
