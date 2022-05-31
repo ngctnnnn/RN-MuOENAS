@@ -1,8 +1,5 @@
 <div align='center'>
   
-## CS532
+## A React Native app demo for Multi-objective Evolutionary Neural Architecture Search
   
 </div> 
-
-
-A React Native app demo for the research on Multi-objective Evolutionary Neural Architecture Search
