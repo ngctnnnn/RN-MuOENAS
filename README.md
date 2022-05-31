@@ -4,8 +4,7 @@
   
 </div>
 
----
-Authors:
+### Authors:
 1. [Tan Ngoc Pham](https://github.com/ngctnnnn/)
 2. [Twel Vu](https://github.com/twelcone)
 3. [An Vo](https://github.com/vokhanhan25)
