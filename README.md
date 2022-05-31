@@ -2,8 +2,24 @@
   
 ## A React Native app demo for Multi-objective Evolutionary Neural Architecture Search
   
-</div> 
+</div>
 
+---
+Authors:
+1. [Tan Ngoc Pham](https://github.com/ngctnnnn/)
+2. [Twel Vu](https://github.com/twelcone)
+3. [An Vo](https://github.com/vokhanhan25)
+
+---
+### Table of contents
+#### 1. [Introduction](#1-introduction)
+#### 2. [Our contribution](#2-our-contribution)
+#### 3. [Implementation details](#3-implementation-details)
+#### 4. [Results](#4-results)
+#### 5. [Demo](#5-demo)
+#### 6. [References](#6-references)
+
+---
 ### 1. Introduction
 #### Automated Machine Learning (AutoML)
 - AutoML aims to enable developers with very little experience in ML, to make use of ML models and techniques.
