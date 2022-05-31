@@ -1,0 +1,4 @@
+*.pbz2 filter=lfs diff=lfs merge=lfs -text
+*.tfrecord filter=lfs diff=lfs merge=lfs -text
+*.pickle filter=lfs diff=lfs merge=lfs -text
+source filter=lfs diff=lfs merge=lfs -text
