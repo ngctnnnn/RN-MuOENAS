@@ -1,6 +1,6 @@
 import time
 from flask import Flask, jsonify, redirect, request
-from inference import predict
+from Model.inference import predict
 from werkzeug.utils import secure_filename
 import os
 import cv2

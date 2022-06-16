@@ -3,14 +3,14 @@ from torchvision import transforms
 from torch.utils.data import DataLoader
 from torchvision import datasets, models, transforms
 from torchvision import models
-from ManyObjARTS.ZeroCostNas.foresight.dataset import get_cifar_dataloaders
-from ManyObjARTS.ZeroCostNas.foresight.models.nasbench2 import (
+from Model.ManyObjARTS.ZeroCostNas.foresight.dataset import get_cifar_dataloaders
+from Model.ManyObjARTS.ZeroCostNas.foresight.models.nasbench2 import (
     get_model_from_arch_str
 ) 
-from ManyObjARTS.ZeroCostNas.foresight.weight_initializers import (
+from Model.ManyObjARTS.ZeroCostNas.foresight.weight_initializers import (
     init_net
 )
-from ManyObjARTS.NASBench import NATS 
+from Model.ManyObjARTS.NASBench import NATS 
 
 def predict():
     args = argparse.Namespace(api_loc='', 
@@ -35,8 +35,9 @@ def predict():
     api.device = 'cpu'
     arch_str = api.convert_individual_to_query(ind=args.index_arch)
 
-    cell = models.vgg16(pretrained=False)
+    cell = models.vgg16(pretrained=True)
     net = cell.to(api.device)
+    print(cell)
     input_lastLayer = net.classifier[6].in_features
     net.classifier[6] = torch.nn.Linear(input_lastLayer, 10)
     
