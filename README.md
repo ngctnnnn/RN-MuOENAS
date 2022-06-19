@@ -90,6 +90,10 @@
 #### Model
 - To make a connection between View and Controller and serve as the middle component for the final application, we use Flask - a micro Python-based web framework due to it flexibility, lightweight, and beginner-friendliness.
 
+<div align='center'>
+
+<img width="368" alt="Screen Shot 2022-05-31 at 17 25 37" src="https://user-images.githubusercontent.com/76537832/174494682-6ba6d395-c4a0-41b8-8ae9-4452f85add25.gif"> </div>
+
 ### 7. References
 [1] Elsken, T., Metzen, J. H., & Hutter, F. (2019). Neural architecture search: A survey. The <i>Journal of Machine Learning Research</i>, 20(1), 1997-2017.
 
